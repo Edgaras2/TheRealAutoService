@@ -1,0 +1,27 @@
+[
+	{
+		"title": " Tire change",
+		"time": "1:30",
+		"price": 20
+	},
+	{
+		"title": "Vehicle inspection",
+		"time": "0:40",
+		"price": 30
+	},
+	{
+		"title": "Vehicle wheel balancing",
+		"time": "0:30",
+		"price": 25
+	},
+	{
+		"title": "Car colour repaint",
+		"time": "3:30",
+		"price": 110
+	},
+	{
+		"title": "Air conditioner fill up",
+		"time": "0:20",
+		"price": 30
+	}
+]
