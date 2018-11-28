@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-color: lightblue}
+</style>
+</head>
+<body>
+
+	<form action="#" th:action="@{/car}" method="post" th:object="${car}">
+	
+		Model: <input type="text" th:field="*{model}"/>
+		Car Plate: <input type="text" th:field="*{carPlate}" />
+		<input type="submit"/>
+	</form>
+
+</body>
+</html>

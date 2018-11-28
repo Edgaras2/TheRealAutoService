@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.infoLine {
+	display: inline-block;
+			}
+
+.noUnderScore {
+	text-decoration:none;
+
+
+}
+body{background-color: lightblue}
+</style>
+</head>
+<body>
+
+
+
+	LOGGED IN:
+	<th:block th:if="${user}">
+
+		<br>
+		UserName: <div class=infoLine th:text="${user.userName}"></div>
+		<br>
+		
+		FirstName: <div class=infoLine th:text="${user.firstName}"></div>
+		<br>
+		LastName: <div class=infoLine th:text="${user.lastName}"></div>
+		<br>
+
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" value="Logout" />
+		</form>
+
+		<a class=noUnderScore th:href="'/delete/' + ${user.id}">
+			<button type="button">DELETE</button>
+		</a>
+
+		<a class=noUnderScore th:href="'/edit/' + ${user.id}">
+			<button type="button">EDIT</button>
+		</a>
+		<a class=noUnderScore th:href="'/car/' + ${user.id}">
+			<button type="button">Add car</button>
+		</a>
+	</th:block>
+	
+	<br> Model : CarPlate:
+	
+	<table th:if="${car}">
+		<th:block th:each="car : ${car}">
+
+			<tr>
+				<td th:text="${car.model}">...</td>
+				<td th:text="${car.carPlate}">...</td>
+				<td><a th:href="'/car/delete/' + ${car.id}">
+						<button type="button">DELETE</button>
+				</a></td>
+				<td><a th:href="'/service/add/' + ${car.id}">
+						<button type="button">Add Service</button>
+				</a></td>
+			</tr>
+		</th:block>
+	</table>
+
+
+
+
+
+
+</body>
+</html>

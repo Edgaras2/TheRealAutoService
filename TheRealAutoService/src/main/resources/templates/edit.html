@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-color: lightblue}
+</style>
+</head>
+<body>
+
+
+EDIT FORM
+
+
+	<form style="float: left" th:action="@{/edit}" method="post" th:object="${user}">
+		<input type="hidden" th:field="*{id}"  />
+		Username:
+		<input type="text" th:field="*{userName}"/>
+		Password:
+		<input type="password" th:field="*{password}" />
+		FirstName:
+		<input type="text" th:field="*{firstName}" />
+		LastName:
+		<input type="text" th:field="*{lastName}"/>
+		Email:
+		<input type="text" th:field="*{email}"/>
+		<input type="submit" name="fsubmit" />
+	</form>
+</body>
+</html>

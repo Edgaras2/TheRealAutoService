@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-color: lightblue}
+</style>
+</head>
+<body>
+	<th:block th:if="${car}">
+		<br>
+		Model: <div th:text="${car.model}"></div>
+		<br>
+		Car Plate: <div th:text="${car.carPlate}"></div>
+		<br>
+	</th:block>
+
+
+	<table th:if="${service}">
+		Service | Time | Price
+		<th:block th:each="service : ${service}">
+
+			<tr>
+
+				<td th:text="${service.title}">...</td>
+				<td th:text="${service.time}">...</td>
+				<td th:text="${service.price}">...</td>
+				<td><a th:href="'/service/save/' + ${service.id}">
+						<button type="button">Add Service</button>
+				</a></td>
+			</tr>
+		</th:block>
+	</table>
+
+	<div style="color: red;" >You added service:</div>
+	<table th:if="${AutoServices}">
+		<th:block th:each="service : ${AutoServices}">
+
+			<tr>
+				<td th:text="${service.title}">...</td>
+				<td th:text="${service.time}">...</td>
+				<td th:text="${service.price}">...</td>
+				<td><a th:href="'/service/delete/' + ${service.id}">
+						<button type="button">DELETE</button>
+				</a></td>
+
+			</tr>
+		</th:block>
+	</table>
+
+
+	<a th:href="'/main'">
+		<button type="button">Back to Main Page</button>
+	</a>
+
+</body>
+</html>
